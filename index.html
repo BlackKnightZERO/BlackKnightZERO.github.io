@@ -15,6 +15,14 @@
 <link rel="stylesheet" type="text/css" href="css/style6.css" />
 <link href="fonts/mdi/css/materialdesignicons.min.css" media="all" rel="stylesheet"/>
 <!-- /STYLES -->
+<script type="text/javascript">
+ function calculate_age(dob) { 
+    var diff_ms = Date.now() - dob.getTime();
+    var age_dt = new Date(diff_ms); 
+    document.write(Math.abs(age_dt.getUTCFullYear() - 1970));
+}
+//console.log(calculate_age(new Date(1994, 3, 17)));
+</script>
 </head>
 <body>
 <!-- PRELOADER -->
@@ -160,7 +168,10 @@
 												</li>
 												<li>
 													<img class="svg" src="img/svg/calendar.svg" alt="" />
-													<span><label>Age:</label> 25</span>
+													<!-- <span><label>Age:</label> 25</span> -->
+													<span><label>Age:</label> 
+														<script>calculate_age(new Date(1994, 3, 17));</script>
+													</span>
 												</li>
 												<li>
 													<img class="svg" src="img/svg/placeholder.svg" alt="" />
@@ -977,5 +988,6 @@
 	  });
 	});
 </script>
+
 </body>
 </html>
